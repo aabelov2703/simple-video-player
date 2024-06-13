@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --bg-main: 240, 245, 255;
+  --bg-contract: 255, 255, 255;
+  --color-main: 15, 10, 0;
+  --color-hover: 210, 220, 255;
+  --background-start-rgb: 235, 240, 255;
+  --background-end-rgb: 225, 235, 250;
+}
+
+[data-theme="dark"] {
+  --foreground-rgb: 255, 255, 255;
+  --bg-main: 5, 5, 30;
+  --bg-contract: 0, 0, 0;
+  --color-main: 250, 250, 225;
+  --color-hover: 13, 9, 61;
+  --background-start-rgb: 8, 10, 45;
+  --background-end-rgb: 3, 3, 26;
+}
+
+body {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  height: 100vh;
+}
+
+main,
+nav,
+footer,
+textarea,
+input {
+  background-color: rgb(var(--bg-main));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: rgb(var(--bg-main));
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-main));
+}
+
+.button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+  color: white;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+.button:hover {
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
