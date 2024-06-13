@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **A Project to Demonstrate Skills in React.JS, Next.JS, TypeScript, and Tailwind CSS**
+
+### **Overview**
+This project is designed to showcase proficiency in modern web development technologies including React.JS, Next.JS, TypeScript, and Tailwind CSS. The project consists of a simple login page and a main page featuring a list of uploaded videos with various interactive elements.
+
+### **Features**
+- Login Page: Users can enter their username to log in.
+- Main Page: Displays a list of uploaded videos with the ability to upload new ones.
+- Responsive Design: Includes a navigation bar (Nav) and footer, ensuring a responsive design across devices.
+- Theme and View Settings: Users can change the theme and toggle between card view and list view for the video list using the settings button (cog icon).
+- Edit Video Details: Users can modify video details.
+- Comments: Users can save new comments on videos.
 
 ## Getting Started
 
