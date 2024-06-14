@@ -3,6 +3,7 @@ import { getVideo, putVideo } from "@/app/api/api_videos";
 import { Button } from "@/components/button";
 import Comments from "@/components/comments";
 import Input from "@/components/input";
+import VideoSelector from "@/components/videoSelector";
 import TextArea from "@/components/textArea";
 import { useAppContext } from "@/hooks/useAppContext";
 import { VideoType } from "@/types/videoType";
@@ -57,6 +58,7 @@ const VideoPage: React.FC = () => {
 
   return (
     <section className="w-full flex flex-col justify-center">
+      <VideoSelector />
       <Input
         className={`text-base font-semibold ${edit ? "bg-m-contrast" : ""}`}
         disabled={!edit}
@@ -72,7 +74,6 @@ const VideoPage: React.FC = () => {
         onChange={(e) => {
           if (edit) changeVideoDetails("description", e);
         }}
-        rows={1}
       />
       {edit ? (
         <Button

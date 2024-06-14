@@ -12,6 +12,7 @@ const config: Config = {
       colors: {
         "m-contrast": "rgb(var(--bg-contract))",
         "m-hover": "rgb(var(--color-hover))",
+        "m-main": "rgb(var(--color-main))",
         "m-base-start": "rgb(var(--background-end-rgb))",
         "m-base-end": "rgb(var(--background-start-rgb))",
       },

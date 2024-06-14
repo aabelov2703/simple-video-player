@@ -58,7 +58,7 @@ export default function Home() {
 
   return (
     <section className="relative p-2">
-      <h1 className="w-full text-center text-xl m2-4">
+      <h1 className="w-full text-center text-xl mb-2">
         Greetings,{" "}
         <span className="font-bold text-blue-600">{user.userName}</span>
       </h1>

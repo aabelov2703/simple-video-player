@@ -22,7 +22,7 @@ export default function RootLayout({
       <AppContextProvider>
         <body className={`${inter.className} flex flex-col items-center`}>
           <Nav />
-          <main className="flex-1 items-center justify-between p-6 sm:p-10 w-full xs:w-[460px] sm:w-[600px] md:w-[750px] lg:w-[900px] xl:w-[1024px] overflow-y-auto">
+          <main className="flex-1 items-center justify-between p-4 sm:p-6 w-full xs:w-[460px] sm:w-[600px] md:w-[750px] lg:w-[900px] xl:w-[1024px] overflow-y-auto">
             {children}
           </main>
           <Footer />
