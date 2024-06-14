@@ -8,16 +8,16 @@ import Modal from "./modal";
 import TextArea from "./textArea";
 
 const Comments: React.FC = () => {
-  const { user, isModal, setIsModal, selectedVideo } = useAppContext();
+  const { user, isModal, setIsModal, selectedVideo, useMock } = useAppContext();
   const [comments, setComments] = useState<CommentType[]>([]);
   const [comment, setComment] = useState<string>("");
 
   useEffect(() => {
     if (!selectedVideo?.id) return;
-    getComments(selectedVideo.id)
+    getComments(selectedVideo.id, useMock)
       .then((res) => setComments(res.comments))
       .catch((err) => console.log(err));
-  }, [selectedVideo?.id]);
+  }, [selectedVideo?.id, useMock]);
 
   if (!selectedVideo?.id) return;
 
@@ -38,7 +38,7 @@ const Comments: React.FC = () => {
     postComment(newComment)
       .then(() => {
         // request a list of new videos, because there is no ID  in the response
-        getComments(selectedVideo.id)
+        getComments(selectedVideo.id, useMock)
           .then((res) => setComments(res.comments))
           .catch((err) => console.log(err));
       })

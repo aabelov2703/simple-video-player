@@ -40,7 +40,9 @@ const Nav = () => {
     if (!user)
       return (
         <div className="w-full flex">
-          <p className="flex-1 hidden xs:block">Welcome to Video Player</p>
+          <p className="flex-1 text-center hidden xs:block">
+            Welcome to Video Player
+          </p>
           <Link href="/login">Login</Link>
         </div>
       );

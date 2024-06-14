@@ -11,17 +11,17 @@ import { videoBlank } from "@/utils/constants";
 import Input from "@/components/input";
 
 export default function Home() {
-  const { videos, setVideos, user, isList, isModal, setIsModal } =
+  const { videos, setVideos, user, isList, isModal, setIsModal, useMock } =
     useAppContext();
   const [classes, setClasses] = useState("");
   const [video, setVideo] = useState<NewVideoType>(videoBlank);
 
   useEffect(() => {
     if (!user.userName) return;
-    getVideos(user.userName)
+    getVideos(user.userName, useMock)
       .then((res) => setVideos(res.videos))
       .catch((err) => console.log(err));
-  }, [user.userName, setVideos]);
+  }, [user.userName, setVideos, useMock]);
 
   useEffect(() => {
     const newClasses = isList
@@ -48,7 +48,7 @@ export default function Home() {
     postVideo(newVideo)
       .then((res) => {
         // request a list of new videos, because there is no ID  in the response
-        getVideos(user.userName)
+        getVideos(user.userName, useMock)
           .then((res) => setVideos(res.videos))
           .catch((err) => console.log(err));
       })

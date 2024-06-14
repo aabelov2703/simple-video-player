@@ -49,9 +49,11 @@ const VideoCard: React.FC<VideoDataProps> = ({ video, children }) => {
   return (
     <>
       <Link href={`/videos/${video.id}`}>
-        <h3>{video.title}</h3>
+        <h3 className="overflow-hidden text-blue-500 font-medium">
+          {video.title}
+        </h3>
       </Link>
-      <p>{video.description}</p>
+      <p className="overflow-hidden">{video.description}</p>
       <div className="w-full overflow-hidden">
         <a href={video.video_url} target="_blank" rel="noopener noreferrer">
           {video.video_url}
@@ -68,11 +70,13 @@ const VideoCard: React.FC<VideoDataProps> = ({ video, children }) => {
 const VideoRow: React.FC<VideoDataProps> = ({ video, children }) => {
   return (
     <>
-      <Link href={`/videos/${video.id}`} className="w-1/3 overflow-hidden">
-        <h3>{video.title}</h3>
+      <Link href={`/videos/${video.id}`} className="w-1/4 overflow-hidden">
+        <h3 className="overflow-hidden text-blue-500 font-medium">
+          {video.title}
+        </h3>
       </Link>
-      <p className="w-5/6 md:w-3/6 overflow-hidden">{video.description}</p>
-      <h6 className="text-xs text-gray-400 italic hidden md:block md:w-1/6">
+      <p className="w-5/6 md:w-4/6 overflow-hidden">{video.description}</p>
+      <h6 className="text-xs text-gray-400 italic hidden md:block md:w-1/12">
         {video.user_id}
       </h6>
       {children}

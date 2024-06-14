@@ -16,6 +16,8 @@ interface AppContextProps {
   setUser: (user: UserProps) => void;
   isModal: boolean;
   setIsModal: (isModal: boolean) => void;
+  useMock: boolean;
+  setUseMock: (useMock: boolean) => void;
 }
 
 export const AppContext = createContext<AppContextProps | null>(null);
@@ -27,6 +29,7 @@ export const AppContextProvider: React.FC<any> = ({ children }) => {
   const [selectedVideo, setSelectedVideo] = useState<VideoType | null>(null);
   const [user, setUser] = useState<UserProps>({ userName: "", password: "" });
   const [isModal, setIsModal] = useState(false);
+  const [useMock, setUseMock] = useState(true);
 
   const appContextValues: AppContextProps = {
     isDark,
@@ -41,6 +44,8 @@ export const AppContextProvider: React.FC<any> = ({ children }) => {
     setUser,
     isModal,
     setIsModal,
+    useMock,
+    setUseMock,
   };
 
   return (

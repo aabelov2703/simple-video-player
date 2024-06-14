@@ -13,20 +13,20 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 const VideoPage: React.FC = () => {
   const params = useParams();
   const searchParams = useSearchParams();
-  const { selectedVideo, setSelectedVideo } = useAppContext();
+  const { selectedVideo, setSelectedVideo, useMock } = useAppContext();
   const id = params.id as string;
   const [edit, setEdit] = useState(searchParams.get("edit") === "true");
   const [updVideo, setUpdVideo] = useState<VideoType>({ ...videoBlank, id });
 
   useEffect(() => {
     if (id)
-      getVideo(id).then((res) => {
+      getVideo(id, useMock).then((res) => {
         if (res) {
           setSelectedVideo(res.video);
           setUpdVideo(res.video);
         }
       });
-  }, [id, setSelectedVideo]);
+  }, [id, setSelectedVideo, useMock]);
 
   const changeVideoDetails = (
     key: string,
